@@ -32,10 +32,8 @@ exports.getTodoById = catchAsync( async (req, res, next) => {
     // SELECT * FROM todos WHERE id = id
     const todo = await Todo.findOne({ where: { id } })
 
-    if (!todo) {
-        return next(new AppError('ToDo not exists', 404))
-    }
-
+    if (!todo) return next(new AppError('ToDo not exists', 404))
+    
     res.status(200).json({ status: 'success', data: { todo } })
 })
 
@@ -58,10 +56,8 @@ exports.updateTodo = catchAsync( async (req, res, next) => {
     //   Find ToDo with the given id -- SELECT * FROM todos WHERE id = id
     const todoExists = await Todo.findOne({ where: { id } })
 
-    if (!todoExists) {
-        //throw Error('Invalid id')
-        return next(new AppError('ToDo not exists', 404))
-    }
+    //throw Error('Invalid id')
+    if (!todoExists) return next(new AppError('ToDo not exists', 404))
 
     // UPDATE todos SET content = 'ddsds' WHERE id = id
     // await Todo.update({ content }, { where: { id } })       
@@ -75,9 +71,7 @@ exports.deleteTodo = catchAsync( async (req, res, next) => {
 
     const todoExists = await Todo.findOne({ where: { id } })
 
-    if (!todoExists) {
-        return next(new AppError('Cant delete cuz it doesnt exists', 404))
-    }
+    if (!todoExists) return next(new AppError('Cant delete cuz it doesnt exists', 404))
     
     // DELETE FROM todos WHERE id = id
     //await Todo.destroy({ where: { id } })

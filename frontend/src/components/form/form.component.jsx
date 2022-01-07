@@ -20,7 +20,6 @@ const Form = ({ onAddTodo }) => {
 			return
 		}
 
-		
 		// TODO: Send data to API
 		axios.post('http://localhost:4000/api/v1/todos/', { content: todo })
 		.then(response => {
