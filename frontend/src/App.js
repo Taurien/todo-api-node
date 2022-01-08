@@ -34,9 +34,9 @@ const App = () => {
 
 	}
 
-	const editStatus = (id, status) => {
-		console.log('im alive')
-	}
+	// const editStatus = (id, status) => {
+	// 	console.log('im alive')
+	// }
 
 	const editTodo = (id, newContent) => {
 
@@ -88,7 +88,7 @@ const App = () => {
 	return (
 		<div className="app">
 			<Form onAddTodo={addTodo} />
-			<TodoList onEditStatus={editStatus} onDeleteTodo={deleteTodo} onEditTodo={editTodo} items={todos} />
+			<TodoList onDeleteTodo={deleteTodo} onEditTodo={editTodo} items={todos} />
 		</div>
 	)
 }

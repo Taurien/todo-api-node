@@ -4,11 +4,11 @@ import Button from '../UI/button/button.component'
 
 import classes from './todo-item.styles.module.css'
 
-const TodoItem = ({ id, content, status, statusHandler, onEditHandler, onDeleteHandler }) => {
+const TodoItem = ({ id, content, status, onEditHandler, onDeleteHandler }) => {
 	// State
 	const [ showEditForm, setShowEditForm ] = useState(false)
 	const [ editContent, setEditContent ] = useState(content)
-	const [ editStatus, setEditStatus ] = useState(status)
+	// const [ editStatus, setEditStatus ] = useState(status)
 
 	const showEditFormHandler = () => {
 		setShowEditForm(prevState => !prevState)
@@ -24,9 +24,9 @@ const TodoItem = ({ id, content, status, statusHandler, onEditHandler, onDeleteH
 		setShowEditForm(false)
 	}
 
-	const editStatusHandler = () => {
-		statusHandler(id, editStatus)
-	}
+	// const editStatusHandler = () => {
+	// 	statusHandler(id, editStatus)
+	// }
 
 	const onDeleteTodoHandler = () => {
 		onDeleteHandler(id)
@@ -38,6 +38,7 @@ const TodoItem = ({ id, content, status, statusHandler, onEditHandler, onDeleteH
 				<>
 				<p className={classes.item__description}>#{id}</p>
 				<p className={classes.item__description}>{editContent}</p>
+				<p>{status}</p>
 				</>
 			) : (
 				<div className={classes['edit-form']}>

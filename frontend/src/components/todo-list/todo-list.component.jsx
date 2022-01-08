@@ -3,7 +3,7 @@ import TodoItem from '../todo-item/todo-item.component'
 
 import classes from './todo-list.styles.module.css'
 
-const TodoList = ({ items, onEditStatus, onEditTodo, onDeleteTodo }) => {
+const TodoList = ({ items, onEditTodo, onDeleteTodo }) => {
 	return (
 		<div className={classes.list}>
 			{/* Render list of todos */}
@@ -14,7 +14,6 @@ const TodoList = ({ items, onEditStatus, onEditTodo, onDeleteTodo }) => {
 						id={id}
 						content={content}
 						status={status}
-						statusHandler={onEditStatus}
 						onEditHandler={onEditTodo}
 						onDeleteHandler={onDeleteTodo}
 					/>
