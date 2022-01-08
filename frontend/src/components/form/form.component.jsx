@@ -51,7 +51,7 @@ const Form = ({ onAddTodo }) => {
 	}
 
 	return (
-		<form onSubmit={onSubmitHandler} classame='form'>
+		<form onSubmit={onSubmitHandler} id='form'>
 			<div className='form__container'>
 				<label className='form__label' htmlFor="todo">
 					Enter your To Do:

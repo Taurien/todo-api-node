@@ -5,7 +5,7 @@ import axios from 'axios'
 import Form from './components/form/form.component'
 import TodoList from './components/todo-list/todo-list.component'
 
-import './App.scss'
+import './styles/App.style.scss'
 
 const App = () => {
 	// State
