@@ -11,6 +11,12 @@ html {
     font-size: 62.5%;
     background-color: #555555;
     font-family: 'Roboto', sans-serif;
+
+    .app {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 *::-webkit-scrollbar {

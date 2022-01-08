@@ -1,8 +1,11 @@
 .list {
 	width: 80%;
+	height: 55rem;
 	margin: 20px auto 0;
 	border: 2px solid white;
-	padding: 10px 20px;
+	padding: 1rem 1.4rem;
+
+	overflow-y: auto;
 	
 	.message {
 		font-size: 20px;

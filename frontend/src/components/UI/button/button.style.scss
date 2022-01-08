@@ -1,14 +1,14 @@
 .button {
 	border: none;
 	width: 100%;
-	font-size: 16px;
-	text-transform: uppercase;
-	font-weight: bold;
-	color: white;
 	background-color: transparent;
 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	img {
-		width: 2.4rem;
+		width: 2.6rem;
 	}
 	
 	&:hover {
