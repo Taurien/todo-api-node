@@ -29,7 +29,7 @@ const Form = ({ onAddTodo }) => {
 			const newTodo = {
 				id: response.data.data.newTodo.id, //X
 				content: todo,
-				completed : 'false',
+				completed : false,
 			}
 			onAddTodo(newTodo)
 		})

@@ -51,16 +51,16 @@ exports.createTodo = catchAsync( async (req, res, next) => {
 
 exports.updateTodo = catchAsync( async (req, res, next) => {
     const { id } = req.params
-    const { content } = req.body
+    const { content, completed } = req.body
 
     //   Find ToDo with the given id -- SELECT * FROM todos WHERE id = id
     const todoExists = await Todo.findOne({ where: { id } })
 
-    // X await todoExists.update({ completed: 'true' })
-
     //throw Error('Invalid id')
     if (!todoExists) return next(new AppError('ToDo not exists', 404))
 
+    if (!completed || completed) await todoExists.update({ completed: completed })
+    
     // UPDATE todos SET content = 'ddsds' WHERE id = id
     // await Todo.update({ content }, { where: { id } })       
     await todoExists.update({ content })

@@ -16,9 +16,9 @@ const Todo = db.define('todos', {
         allowNull: false,
     },
     completed: {
-        type: DataTypes.STRING(15),
+        type: DataTypes.BOOLEAN,
         allowNull: false,
-        defaultValue: 'false'
+        defaultValue: false,
     },
 })
 

@@ -34,31 +34,47 @@ const App = () => {
 
 	}
 
-	// const editStatus = (id, status) => {
-	// 	console.log('im alive')
-	// }
+	const editTodo = (id, newContent, completed) => {
 
-	const editTodo = (id, newContent) => {
-
-		// TODO: Send data to API -- update the slcted ToDo by id 
-		axios.patch(`http://localhost:4000/api/v1/todos/${id}`, { content: newContent })
-		.catch(err => {
-			console.log(err)
-		})
 		
-		setTodos(prevState => {
-			const currentTodos = prevState
+		if (completed === true || completed === false) {
 
-			const todoIndex = currentTodos.findIndex(todo => +todo.id === +id)
+			// console.log(`A ${completed}`)
+			// console.log(`B ${!completed}`)
+			axios.patch(`http://localhost:4000/api/v1/todos/${id}`, { completed: !completed })
+			.catch(err => {
+				console.log(err)
+			})
 
-			const updatedTodo = currentTodos[todoIndex]
+			setTodos(todos.map(todo => +todo.id === +id ? 
+					{...todo, completed: !todo.completed}
+					: todo
+					))
+		}
 
-			updatedTodo.content = newContent
+		if (newContent) {
+			// TODO: Send data to API -- update the slcted ToDo by id 
+			axios.patch(`http://localhost:4000/api/v1/todos/${id}`, { content: newContent })
+			.catch(err => {
+				console.log(err)
+			})
 
-			currentTodos[todoIndex] = updatedTodo
+			setTodos(prevState => {
+				const currentTodos = prevState
+	
+				const todoIndex = currentTodos.findIndex(todo => +todo.id === +id)
+	
+				const updatedTodo = currentTodos[todoIndex]
+	
+				updatedTodo.content = newContent
+	
+				currentTodos[todoIndex] = updatedTodo
+	
+				return currentTodos
+			})
+		}
 
-			return currentTodos
-		})
+		
 	}
 
 	const deleteTodo = id => {

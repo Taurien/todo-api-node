@@ -19,6 +19,36 @@
 	font-size: 24px;
 }
 
+.info {
+	display: inline-flex;
+}
+
+.test {
+	width: 20px;
+	height: 20px;
+	border: none;
+	border-radius: 50%;
+
+}
+
+.true {
+	background-color: green;
+
+	padding: 6px 4px;
+	height: 20px;
+	border: none;
+	border-radius: 4px;
+}
+
+.false {
+	background-color: red;
+
+	padding: 6px 4px;
+	height: 20px;
+	border: none;
+	border-radius: 4px;
+}
+
 .edit-form {
 	display: flex;
 	flex-direction: row;

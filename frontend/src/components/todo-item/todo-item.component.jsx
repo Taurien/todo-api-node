@@ -20,13 +20,13 @@ const TodoItem = ({ id, content, completed, onEditHandler, onDeleteHandler }) =>
 	}
 
 	const onEditTodoHandler = () => {
-		onEditHandler(id, editContent)
+		onEditHandler(id, editContent, null)
 		setShowEditForm(false)
 	}
 
-	// const editStatusHandler = () => {
-	// 	statusHandler(id, editStatus)
-	// }
+	const editCompleted = () => {
+		onEditHandler(id, null, completed)
+	}
 
 	const onDeleteTodoHandler = () => {
 		onDeleteHandler(id)
@@ -36,9 +36,11 @@ const TodoItem = ({ id, content, completed, onEditHandler, onDeleteHandler }) =>
 		<div className={classes.item}>
 			{!showEditForm ? (
 				<>
-				<p className={classes.item__description}>#{id}</p>
-				<p className={classes.item__description}>{editContent}</p>
-				<p>{completed}</p>
+					<div className={classes.info}>
+						<p className={classes.item__description}>#{id}</p>
+						<span className={completed? classes.true : classes.false} onClick={editCompleted}>{completed? 'completed' : 'pending' }</span>
+					</div>
+					<p className={classes.item__description}>{editContent}</p>
 				</>
 			) : (
 				<div className={classes['edit-form']}>
