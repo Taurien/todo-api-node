@@ -65,7 +65,7 @@ const Form = ({ onAddTodo }) => {
 					name="todo"
 					id="todo"
 				/>
-				{/* <Button type="submit" label={'Submit'} /> */}
+				<Button type="submit" label='Submit' />
 			</div>
 		</form>
 	)

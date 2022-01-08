@@ -52,7 +52,7 @@ const TodoItem = ({ id, content, completed, onEditHandler, onDeleteHandler }) =>
 						className='edit-form__input'
 					/>
 
-					<Button label="Edit" type="submit" onClick={onEditTodoHandler} />
+					<Button label="Submit" type="submit" onClick={onEditTodoHandler} />
 				</div>
 			)}
 
