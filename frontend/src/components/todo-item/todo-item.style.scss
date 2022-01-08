@@ -1,9 +1,10 @@
 .item {
     font-size: 24px;
-    padding: 1.2rem 0;
-    background-color: rgb(128, 128, 128);
-	border-bottom: 2px solid white;
     color: white;
+    padding: 1.2rem 0;
+    border-radius: 2rem;
+	border-bottom: 2px solid white;
+    background-color: rgb(128, 128, 128);
     
     &:last-child {
         border-bottom: none;
@@ -11,6 +12,7 @@
     
     .info {
         width: 100%;
+        padding: 0 0.8rem;
         display: inline-flex;
         align-items: center;
         justify-content: space-between;
@@ -25,7 +27,7 @@
     }
 
     .item__description {
-        margin: 1rem 0rem;
+        margin: 1rem 2rem;
     }
     
     
