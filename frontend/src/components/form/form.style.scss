@@ -15,9 +15,15 @@
 		width: 60%; //media
 	}
 	
+	.form__label {
+		color: white;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	
 	.form__container {
 		width: 60%;
-		margin: 6rem 0;
+		margin: 2rem 0;
 		padding: 0.5rem 0;
 		display: grid;
 		grid-template-columns: 3fr 1fr;
@@ -30,11 +36,7 @@
 		// box-shadow: inset 6px 6px 12px #bebebe,
 		// 			inset -6px -6px 12px #ffffff;
 		
-		.form__label {
-			color: white;
-			font-size: 20px;
-			font-weight: bold;
-		}
+		
 		
 		.form__input {
 			font-size: 1.6rem;

@@ -1,28 +1,44 @@
 .item {
     padding: 10px 0;
 	border-bottom: 2px solid white;
+    color: white;
+    font-size: 24px;
     
     &:last-child {
         border-bottom: none;
     }
     
     .info {
+        width: 100%;
         display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
     }
     
-    .item__description {
-        color: white;
-        font-size: 24px;
+    .item__id {
+        padding: 0.5rem;
+
+        color: black;
+        background-color: white;
+        border-radius: 50%;
     }
+
+    .item__description {
+    }
+    
     
     .isCompleted {
-        padding: 6px 4px;
+        padding: 0.6rem 1.8rem;
+        border-radius: 2rem;
         
         &.true {
             background-color: green;
         }
         &.false {
             background-color: red;
+        }
+        &:hover {
+            cursor: pointer;
         }
     }
     

@@ -58,7 +58,7 @@ const Form = ({ onAddTodo }) => {
 			<div className='form__container'>
 				<input
 					className={`form__input ${showError ? 'error' : '' }`}
-					placeholder="Enter a desscription"
+					placeholder="Enter a description"
 					type="text"
 					value={todo}
 					onChange={onChangeHandler}

@@ -37,7 +37,7 @@ const TodoItem = ({ id, content, completed, onEditHandler, onDeleteHandler }) =>
 			{!showEditForm ? (
 				<>
 					<div className='info'>
-						<p className='item__description'>#{id}</p>
+						<p className='item__id'>#{id}</p>
 						<span className={`isCompleted ${completed? 'true' : 'false'}`} onClick={editCompleted}>{completed? 'completed' : 'pending' }</span>
 					</div>
 					<p className='item__description'>{editContent}</p>
