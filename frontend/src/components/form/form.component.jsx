@@ -52,10 +52,10 @@ const Form = ({ onAddTodo }) => {
 
 	return (
 		<form onSubmit={onSubmitHandler} id='form'>
+			<label className='form__label' htmlFor="todo">
+				Enter your To Do:
+			</label>
 			<div className='form__container'>
-				<label className='form__label' htmlFor="todo">
-					Enter your To Do:
-				</label>
 				<input
 					className={`form__input ${showError ? 'error' : '' }`}
 					placeholder="Enter a desscription"
@@ -65,8 +65,8 @@ const Form = ({ onAddTodo }) => {
 					name="todo"
 					id="todo"
 				/>
+				{/* <Button type="submit" label={'Submit'} /> */}
 			</div>
-			<Button type="submit" label={'Submit'} />
 		</form>
 	)
 }
