@@ -7,11 +7,12 @@
 	font-weight: bold;
 	color: white;
 	background-color: transparent;
+	
+	&:hover {
+		cursor: pointer;
+		background-color: #c2c2c2;
+		border: 2px solid #c2c2c2;
+		color: whitesmoke;
+	}
 }
 
-.button:hover {
-	cursor: pointer;
-	background-color: #c2c2c2;
-	border: 2px solid #c2c2c2;
-	color: whitesmoke;
-}

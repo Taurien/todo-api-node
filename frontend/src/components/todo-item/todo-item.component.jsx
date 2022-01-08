@@ -2,7 +2,7 @@ import { useState } from 'react'
 // Components
 import Button from '../UI/button/button.component'
 
-import classes from './todo-item.styles.module.css'
+import './todo-item.style.scss'
 
 const TodoItem = ({ id, content, completed, onEditHandler, onDeleteHandler }) => {
 	// State
@@ -33,23 +33,23 @@ const TodoItem = ({ id, content, completed, onEditHandler, onDeleteHandler }) =>
 	}
 
 	return (
-		<div className={classes.item}>
+		<div className='item'>
 			{!showEditForm ? (
 				<>
-					<div className={classes.info}>
-						<p className={classes.item__description}>#{id}</p>
-						<span className={completed? classes.true : classes.false} onClick={editCompleted}>{completed? 'completed' : 'pending' }</span>
+					<div className='info'>
+						<p className='item__description'>#{id}</p>
+						<span className={`isCompleted ${completed? 'true' : 'false'}`} onClick={editCompleted}>{completed? 'completed' : 'pending' }</span>
 					</div>
-					<p className={classes.item__description}>{editContent}</p>
+					<p className='item__description'>{editContent}</p>
 				</>
 			) : (
-				<div className={classes['edit-form']}>
+				<div className='edit-form'>
 					<input
 						type="text"
 						onChange={onChangeHandler}
 						value={editContent}
 						placeholder={content}
-						className={classes['edit-form__input']}
+						className='edit-form__input'
 					/>
 
 					<Button label="Edit" type="submit" onClick={onEditTodoHandler} />
@@ -57,7 +57,7 @@ const TodoItem = ({ id, content, completed, onEditHandler, onDeleteHandler }) =>
 			)}
 
 			{/* Action Buttons */}
-			<div className={classes['action-buttons']}>
+			<div className='action-buttons'>
 				<Button onClick={showEditFormHandler} type="button" label={showEditForm ? 'Cancel' : 'Edit'} />
 				<Button onClick={onDeleteTodoHandler} type="button" label="Delete" />
 			</div>

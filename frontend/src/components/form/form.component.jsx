@@ -4,7 +4,7 @@ import axios from 'axios'
 // Components
 import Button from '../UI/button/button.component'
 
-import classes from './form.styles.module.css'
+import './form.style.scss'
 
 const Form = ({ onAddTodo }) => {
 	// State
@@ -51,13 +51,13 @@ const Form = ({ onAddTodo }) => {
 	}
 
 	return (
-		<form onSubmit={onSubmitHandler} className={classes.form}>
-			<div className={classes.form__container}>
-				<label className={classes.form__label} htmlFor="todo">
+		<form onSubmit={onSubmitHandler} classame='form'>
+			<div className='form__container'>
+				<label className='form__label' htmlFor="todo">
 					Enter your To Do:
 				</label>
 				<input
-					className={`${classes.form__input} ${showError ? classes.error : ''}`}
+					className={`form__input ${showError ? 'error' : '' }`}
 					placeholder="Enter a desscription"
 					type="text"
 					value={todo}

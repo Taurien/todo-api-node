@@ -1,11 +1,11 @@
 // Components
 import TodoItem from '../todo-item/todo-item.component'
 
-import classes from './todo-list.styles.module.css'
+import './todo-list.style.scss'
 
 const TodoList = ({ items, onEditTodo, onDeleteTodo }) => {
 	return (
-		<div className={classes.list}>
+		<div className='list'>
 			{/* Render list of todos */}
 			{items.length > 0 &&
 				items.map(({ id, content, completed }) => (
@@ -21,7 +21,7 @@ const TodoList = ({ items, onEditTodo, onDeleteTodo }) => {
 
 			{/* Show message if list is empty */}
 			{items.length === 0 && (
-				<p className={classes.message}>No pending To Do's</p>
+				<p className='message'>No pending To Do's</p>
 			)}
 		</div>
 	)

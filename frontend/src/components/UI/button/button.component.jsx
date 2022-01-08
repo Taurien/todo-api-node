@@ -1,11 +1,11 @@
-import classes from './button.styles.module.css'
+import './button.style.scss'
 
 const Button = ({ onClick, type, label }) => {
 	return (
 		<button
 			onClick={onClick}
 			type={type || 'submit'}
-			className={classes.button}
+			className='button'
 		>
 			{label}
 		</button>
