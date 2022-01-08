@@ -8,12 +8,12 @@ const TodoList = ({ items, onEditTodo, onDeleteTodo }) => {
 		<div className={classes.list}>
 			{/* Render list of todos */}
 			{items.length > 0 &&
-				items.map(({ id, content, status }) => (
+				items.map(({ id, content, completed }) => (
 					<TodoItem
 						key={id}
 						id={id}
 						content={content}
-						status={status}
+						completed={completed}
 						onEditHandler={onEditTodo}
 						onDeleteHandler={onDeleteTodo}
 					/>

@@ -15,10 +15,10 @@ const Todo = db.define('todos', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    status: {
+    completed: {
         type: DataTypes.STRING(15),
         allowNull: false,
-        defaultValue: 'pending'
+        defaultValue: 'false'
     },
 })
 

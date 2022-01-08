@@ -29,7 +29,7 @@ const Form = ({ onAddTodo }) => {
 			const newTodo = {
 				id: response.data.data.newTodo.id, //X
 				content: todo,
-				status : 'pending',
+				completed : 'false',
 			}
 			onAddTodo(newTodo)
 		})

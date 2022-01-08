@@ -4,7 +4,7 @@ import Button from '../UI/button/button.component'
 
 import classes from './todo-item.styles.module.css'
 
-const TodoItem = ({ id, content, status, onEditHandler, onDeleteHandler }) => {
+const TodoItem = ({ id, content, completed, onEditHandler, onDeleteHandler }) => {
 	// State
 	const [ showEditForm, setShowEditForm ] = useState(false)
 	const [ editContent, setEditContent ] = useState(content)
@@ -38,7 +38,7 @@ const TodoItem = ({ id, content, status, onEditHandler, onDeleteHandler }) => {
 				<>
 				<p className={classes.item__description}>#{id}</p>
 				<p className={classes.item__description}>{editContent}</p>
-				<p>{status}</p>
+				<p>{completed}</p>
 				</>
 			) : (
 				<div className={classes['edit-form']}>

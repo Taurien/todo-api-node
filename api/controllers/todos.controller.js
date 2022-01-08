@@ -9,10 +9,10 @@ const { AppError } = require('../utils/appError')
 exports.getAllTodos = catchAsync( async (req, res, next) => {
         // SELECT * FROM todos
         // JOIN users ON users.id = todos.userId
-        // WHERE status = 'pending'
+        // WHERE completed = 'false'
         const todos = await Todo.findAll()
         
-        //{     where: { status: 'pending'},
+        //{     where: { completed: 'false'},
         //     include: [{
         //         model: User,
         //         attributes: { include: ['id', 'name', 'email'] },
